@@ -100,8 +100,40 @@
                 </div>
             </div>
         </section>
+        <div class="container">
+            <div class="dropdown">
+                <div class="dropdown-toggle" id="dropdownToggle">Select an Option</div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <ul>
+                        <li>Option 1</li>
+                        <li>Option 2</li>
+                        <li>Option 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <script>
+        const toggle = document.getElementById("dropdownToggle");
+        const menu = document.getElementById("dropdownMenu");
+
+        toggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            menu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", () => {
+            menu.classList.remove("show");
+        });
+
+        menu.querySelectorAll("li").forEach(item => {
+            item.addEventListener("click", () => {
+                toggle.textContent = item.textContent;
+                menu.classList.remove("show");
+            });
+        });
+    </script>
 
 
     <script>
