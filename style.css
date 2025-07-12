@@ -7,3 +7,28 @@
     font-weight: 600;
     margin-bottom: 6px;
 }
+.horizontal-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scroll */
+  white-space: nowrap; /* Keep items in a single line */
+  width: 100%;
+  cursor: grab; /* Indicate scroll interaction */
+  scrollbar-width: none; /* Firefox */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.scroll-content {
+  display: inline-block; /* Essential for horizontal layout */
+}
+
+.item {
+  display: inline-block; /* Horizontal alignment */
+  width: 300px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  margin-right: 16px;
+  background: #f0f0f0;
+  /* Add other styles as needed */
+}
